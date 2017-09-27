@@ -43,8 +43,6 @@ fld_direc = data_direc + "FLD/"
 pha_direc = data_direc + "PHA/"
 
 print("Data Directory: " + data_direc)
-#print("Field Directory: " + fld_direc)
-#print("Phase Space Directory: " + pha_direc)
 
 #Dictionary that turns the data we want to animate into the correct file path
 #Sets default as 'none' in case of typo and aborts the program
