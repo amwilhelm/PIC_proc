@@ -20,8 +20,6 @@ import time
 #Directory Processing
 #-------------------------------------------------
 #Get current directory
-
-
 cdirec = os.getcwd()
 
 #Read in a directory to process
@@ -49,6 +47,7 @@ print("Data Directory: " + data_direc)
 #print("Phase Space Directory: " + pha_direc)
 
 #Dictionary that turns the data we want to animate into the correct file path
+#Sets default as 'none' in case of typo and aborts the program
 def name_dic(x):
 	return{
 		'e1': 'FLD/e1',
@@ -57,6 +56,12 @@ def name_dic(x):
 		'b1': 'FLD/b1',
 		'b2': 'FLD/b2',
 		'b3': 'FLD/b3',
+		'e1-savg': 'FLD/e1-savg',
+		'e2-savg': 'FLD/e2-savg',
+		'e3-savg': 'FLD/e3-savg',
+		'b1-savg': 'FLD/b1-savg',
+		'b2-savg': 'FLD/b2-savg',
+		'b3-savg': 'FLD/b3-savg',
 		'x2x1': 'PHA/x2x1/electrons/',
 		'p1x1': 'PHA/p1x1/electrons/',
 		'p2x1': 'PHA/p2x1/electrons/',
@@ -70,6 +75,7 @@ def name_dic(x):
 		'ecdens': 'DENSITY/electrons/charge',
 	}.get(x,'none')
 
+#Aborts program if data set name is input incorrectly
 if name_dic(this_data_name) == 'none':
 	print('Bad data name. Aborting...')
 	quit()
@@ -96,11 +102,11 @@ print("Number of files: " + str(numfiles))
 
 #Animate the Data
 #-------------------------------------------------
-print("Writing gifs...") 
+print("Making gift...") 
 t1 = time.time()
 
 fun.animator(this_data,numfiles,fun.gif_name(this_data))
 
 t2 = time.time()
-print("Time for gif-making: " + str(t2-t1))
+print("Time for gift-making: " + str(t2-t1))
 
