@@ -20,6 +20,8 @@ import time
 #Directory Processing
 #-------------------------------------------------
 #Get current directory
+
+
 cdirec = os.getcwd()
 
 #Read in a directory to process
@@ -32,7 +34,7 @@ this_data_name = str(sys.argv[2])
 print("Current Directory: "+ cdirec)
 
 #The base directory for this data
-base_direc = cdirec + "/" + ifile + "/"
+base_direc = cdirec + "/data/" + ifile + "/"
 
 #Print the base directory
 print("Base Directory: " + base_direc)
